@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Placeholder Image Generator</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <form action="/download" method="post">
+            <label for="width">Width:</label>
+            <input type="number" name="width" required>
+            <label for="height">Height:</label>
+            <input type="number" name="height" required>
+            <label for="image_type">Image Type:</label>
+            <select name="image_type" required>
+                <option value="png">PNG</option>
+                <option value="svg">SVG</option>
+                <option value="jpeg">JPEG</option>
+ <!--           <option value="ico">ICO</option> -->
+            </select>
+            <button type="submit">Generate and Download Image</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2023 Placeholder Image Generator | Downloads: {{ download_count }}</p>
+        </div>
+    </footer>
+</body>
+</html>
